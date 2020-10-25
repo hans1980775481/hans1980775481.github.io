@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="test, Tony Xiong 的博客站点">
+    <meta name="keywords" content="hexo  搭建教程, Tony Xiong 的博客站点">
     <meta name="description" content="记录学习笔记和生活日志">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>test | Tony Xiong 的博客站点</title>
+    <title>hexo  搭建教程 | Tony Xiong 的博客站点</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201016112531594.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">test</h1>
+                    <h1 class="description center-align post-title">hexo  搭建教程</h1>
                 </div>
             </div>
         </div>
@@ -431,12 +431,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/hexo/">
+                                <span class="chip bg-color">hexo</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                                <span class="chip bg-color">博客</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
+                                hexo博客搭建
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -445,28 +462,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-17
+                    2020-10-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-17
+                    2020-10-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6
+                    706
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -481,9 +498,136 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>你看到我了吗</p>
+                <hr>
+<blockquote>
+<p> 让我们看看能不能展示图片</p>
 </blockquote>
+<ul>
+<li>同名文件夹中的图片引用可以直接使用图片名即可引用图片</li>
+</ul>
+<p><img src="image-20201016112531594.png" alt="image-20201016112531594"></p>
+<ul>
+<li>使用远程文件</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201016112531594.png" alt="image-20201016112531594"></p>
+<ul>
+<li>使用相对路径是引用不到图片的</li>
+</ul>
+<p><img src="_image/hexo-%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/image-20201016125419332.png" alt="image-20201016125419332"></p>
+<p><strong><em>相关链接</em></strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leay.net/2019/12/25/hexo/">Hexo 引用本地图片以及引用本地任意位置图片的一点思路</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cd623d82c00a">Hexo博客新建文章并发布</a></li>
+</ul>
+<h4 id="使用Hexo-如何初始化"><a href="#使用Hexo-如何初始化" class="headerlink" title="使用Hexo 如何初始化"></a>使用Hexo 如何初始化</h4><ol>
+<li>初始化内容<ul>
+<li>分类</li>
+<li>标签</li>
+<li>关于我</li>
+<li>等等</li>
+</ul>
+</li>
+<li>如何在文章中配置分类、标签等信息</li>
+</ol>
+<p><strong><em>相关链接</em></strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://linlif.github.io/2017/05/27/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/">Hexo使用攻略-添加分类及标签</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md#%E9%85%8D%E7%BD%AE">配置</a></li>
+<li><a target="_blank" rel="noopener" href="https://ijiaober.github.io/2014/08/05/hexo/hexo-04/">Hexo使用攻略：（四）Hexo的分类和标签设置</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32337109/article/details/78755662">hexo 创建文章、标签、分类</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38747027/article/details/107967518">hexo博客front-matter格式</a></li>
+</ul>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> CentOS7下Tomcat启动慢的原因及解决方案
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2017-12-02 21:01:24</span>
+<span class="token key atrule">comments</span><span class="token punctuation">:</span> <span class="token boolean important">true </span><span class="token comment" spellcheck="true">#是否可评论</span>
+<span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true </span><span class="token comment" spellcheck="true">#是否显示文章目录</span>
+<span class="token key atrule">categories</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#分类</span>
+    <span class="token punctuation">-</span> 云服务器
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>   <span class="token comment" spellcheck="true">#标签</span>
+    <span class="token punctuation">-</span> centOS
+    <span class="token punctuation">-</span> tomcat
+<span class="token punctuation">---</span>
+
+<span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> 标题
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2020-02-29 16:00:00</span>
+<span class="token key atrule">summary</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 文章摘要</span>
+<span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">mathjax</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">top</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">cover</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">abbrlink</span><span class="token punctuation">:</span> <span class="token number">213245 </span><span class="token comment" spellcheck="true"># 自己可随意设置</span>
+<span class="token key atrule">img</span><span class="token punctuation">:</span> <span class="token string">'https://img-blog.csdnimg.cn/20200309120551356.png'</span> <span class="token comment" spellcheck="true"># 设置文章背景图，设置为外链图片，访问快</span>
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 算法
+  <span class="token punctuation">-</span> 计算机知识
+<span class="token key atrule">categories</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 算法
+<span class="token key atrule">author</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 设置文章作者</span>
+<span class="token key atrule">password</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 设置密码（yml中开启相应功能）</span>
+<span class="token key atrule">coverImg</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 轮播图片</span>
+<span class="token punctuation">---</span>
+
+
+<span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> typora<span class="token punctuation">-</span>vue<span class="token punctuation">-</span>theme主题介绍
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2018-09-07 09:25:00</span>
+<span class="token key atrule">author</span><span class="token punctuation">:</span> 赵奇
+<span class="token key atrule">img</span><span class="token punctuation">:</span> /source/images/xxx.jpg
+<span class="token key atrule">top</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">cover</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">coverImg</span><span class="token punctuation">:</span> /images/1.jpg
+<span class="token key atrule">password</span><span class="token punctuation">:</span> 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+<span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">mathjax</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">summary</span><span class="token punctuation">:</span> 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+<span class="token key atrule">categories</span><span class="token punctuation">:</span> Markdown
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> Typora
+  <span class="token punctuation">-</span> Markdown
+<span class="token punctuation">---</span>
+
+</code></pre>
+<blockquote>
+<p>npm的一些使用操作：</p>
+</blockquote>
+<h2 id="npm-插件安装"><a href="#npm-插件安装" class="headerlink" title="npm 插件安装"></a>npm 插件安装</h2><h3 id="查看插件"><a href="#查看插件" class="headerlink" title="查看插件"></a>查看插件</h3><pre class=" language-shell"><code class="language-shell">npm list</code></pre>
+<h3 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h3><pre class=" language-shell"><code class="language-shell">npm install dplayer --save
+npm install hexo-tag-dplayer</code></pre>
+<p>如何使用：</p>
+<pre class=" language-shell"><code class="language-shell">&#123;% dplayer "url=http://home.ustc.edu.cn/~mmmwhy/GEM.mp4"  "pic=http://home.ustc.edu.cn/~mmmwhy/GEM.jpg" "loop=yes" "theme=#FADFA3" "autoplay=false" "token=tokendemo" %&#125;</code></pre>
+<h3 id="音乐"><a href="#音乐" class="headerlink" title="音乐"></a>音乐</h3><pre class=" language-shell"><code class="language-shell">npm install aplayer --save
+npm install hexo-tag-aplayer</code></pre>
+<p>如何使用：</p>
+<pre class=" language-shell"><code class="language-shell">&#123;% aplayer "HUSH" "Lasse Lindh" "http://opj0cbfmf.bkt.clouddn.com/Part.3%20Lasse%20Lindh%20-%20Hush.mp3"  "http://opj0cbfmf.bkt.clouddn.com/hush.jpg" "autoplay=false" %&#125;</code></pre>
+<h3 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h3><pre class=" language-shell"><code class="language-shell">npm install hexo-deployer-git --save</code></pre>
+<h3 id="站点地图"><a href="#站点地图" class="headerlink" title="站点地图"></a>站点地图</h3><pre class=" language-shell"><code class="language-shell">npm install hexo-generator-sitemap --save
+npm install hexo-generator-baidu-sitemap --save</code></pre>
+<h3 id="gulp压缩"><a href="#gulp压缩" class="headerlink" title="gulp压缩"></a>gulp压缩</h3><pre class=" language-shell"><code class="language-shell">npm install --global gulp-cli
+npm install --save-dev gulp
+npm i gulp gulp-clean-css gulp-htmlclean gulp-htmlmin gulp-imagemin gulp-uglify -S
+npm install --save-dev gulp del
+npm install --save-dev run-sequence
+npm install gulp-minify-css --save-dev</code></pre>
+<h3 id="站内搜索"><a href="#站内搜索" class="headerlink" title="站内搜索"></a>站内搜索</h3><pre class=" language-shell"><code class="language-shell">npm install hexo-generator-search --save</code></pre>
+<h3 id="百度主动提交"><a href="#百度主动提交" class="headerlink" title="百度主动提交"></a>百度主动提交</h3><pre class=" language-shell"><code class="language-shell">npm install hexo-baidu-url-submit --save</code></pre>
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><pre class=" language-shell"><code class="language-shell">npm uninstall <你的插件名></code></pre>
+<p><strong><em>相关链接</em></strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.dazhuanlan.com/2019/10/12/5da110cdd9a7b/">卸载 hexo 插件</a></li>
+</ul>
+<h4 id="好看的主题以及相关地址："><a href="#好看的主题以及相关地址：" class="headerlink" title="好看的主题以及相关地址："></a>好看的主题以及相关地址：</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">hexo-theme-matery主题</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/godweiyang/hexo-matery-modified">hexo-matery-modified</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/JoeyBling/hexo-theme-yilia-plus">hexo-theme-yilia-plus</a></li>
+</ul>
+<h4 id="一些好的文章："><a href="#一些好的文章：" class="headerlink" title="一些好的文章："></a>一些好的文章：</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35668237">超详细Hexo+Github博客搭建小白教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">hexo中文官网</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/efaf72aab32e">Hexo 博客从搭建部署到SEO优化等详细教程</a></li>
+</ul>
 
             </div>
             <hr/>
@@ -509,7 +653,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hans1980775481.github.io/2020/10/17/test/">http://hans1980775481.github.io/2020/10/17/test/</a>
+                    <a href="http://hans1980775481.github.io/2020/10/16/hexo-da-jian-jiao-cheng/">http://hans1980775481.github.io/2020/10/16/hexo-da-jian-jiao-cheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -546,7 +690,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/hexo/">
+                                    <span class="chip bg-color">hexo</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                                    <span class="chip bg-color">博客</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -979,13 +1131,12 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/10/17/hello-world/">
+                <a href="/2020/10/17/test/">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201016112531594.png" class="responsive-img" alt="test">
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">test</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1013,7 +1164,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2020/10/16/hexo-da-jian-jiao-cheng/">
@@ -1047,6 +1198,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
