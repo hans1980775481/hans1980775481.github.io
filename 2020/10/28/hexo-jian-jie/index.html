@@ -514,8 +514,8 @@
 <p>我們在<code>source</code>文件夾下的文件均會被編譯，到<code>public</code>文件夾下生成對應的<code>HTML</code>文件，<code>post</code>中的文件會在<code>public</code>文件夾中生成和文章時間一直的目錄最後會有如下目錄：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201028231554092.png" alt="image-20201028231554092"></p>
 <p>文章的内容會保存在<code>index.html</code>文件中</p>
-<h4 id="1-2-4-layout（布局）"><a href="#1-2-4-layout（布局）" class="headerlink" title="1.2.4 layout（布局）"></a>1.2.4 layout（布局）</h4><hr>
-<h5 id="1-2-4-1-post"><a href="#1-2-4-1-post" class="headerlink" title="1.2.4.1 post"></a><strong>1.2.4.1 post</strong></h5><p>当你每一次使用代码</p>
+<h4 id="1-2-layout（布局）"><a href="#1-2-layout（布局）" class="headerlink" title="1.2 layout（布局）"></a>1.2 layout（布局）</h4><hr>
+<h5 id="1-2-1-post"><a href="#1-2-1-post" class="headerlink" title="1.2.1 post"></a><strong>1.2.1 post</strong></h5><p>当你每一次使用代码</p>
 <pre class=" language-bash"><code class="language-bash">hexo new XXX</code></pre>
 <p>它其实默认使用的是<code>post</code>这个布局，也就是在<code>source</code>文件夹下的<code>_post</code>里面。</p>
 <p><code>Hexo</code>有三种默认布局：<code>post</code>、<code>page</code>和<code>draft</code>，它们分别对应不同的路径，而您自定义的其他布局和<code>post</code>相同，都将储存到<code>source/_posts</code>文件夹。</p>
@@ -530,7 +530,7 @@
 <p>hexo new page “about”</p>
 </blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201028232032913.png" alt="image-20201028232032913"></p>
-<h5 id="1-2-4-3-draft"><a href="#1-2-4-3-draft" class="headerlink" title="1.2.4.3 draft"></a><strong>1.2.4.3 draft</strong></h5><p><code>draft</code>是草稿的意思，也就是你如果想写文章，又不希望被看到，那么可以</p>
+<h5 id="1-2-3-draft"><a href="#1-2-3-draft" class="headerlink" title="1.2.3 draft"></a><strong>1.2.3 draft</strong></h5><p><code>draft</code>是草稿的意思，也就是你如果想写文章，又不希望被看到，那么可以</p>
 <pre class=" language-bash"><code class="language-bash">hexo new draft newdraft</code></pre>
 <p>这样会在<code>source/_draft</code>中新建一个<code>newdraft.md</code>文件，如果你的草稿文件写的过程中，想要预览一下，那么可以使用</p>
 <pre class=" language-bash"><code class="language-bash">hexo server --draft</code></pre>
@@ -538,7 +538,7 @@
 <p>如果你的草稿文件写完了，想要发表到<code>post</code>中，</p>
 <pre class=" language-bash"><code class="language-bash">hexo publish draft newdraft</code></pre>
 <p>就会自动把<code>newdraft.md</code>发送到<code>post</code>中。</p>
-<h4 id="1-2-3-Front-matter"><a href="#1-2-3-Front-matter" class="headerlink" title="1.2.3 Front-matter"></a>1.2.3 Front-matter</h4><blockquote>
+<h4 id="1-3-Front-matter"><a href="#1-3-Front-matter" class="headerlink" title="1.3 Front-matter"></a>1.3 Front-matter</h4><blockquote>
 <p><code>scaffolds：</code>生成文章的一些模板</p>
 </blockquote>
 <p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201028232230247.png" alt="image-20201028232230247"></p>
