@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Tony Xiong 的博客站点">
+    <meta name="keywords" content="Hexo--簡介, Tony Xiong 的博客站点">
     <meta name="description" content="记录学习笔记和生活日志">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Tony Xiong 的博客站点</title>
+    <title>Hexo--簡介 | Tony Xiong 的博客站点</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">Hexo--簡介</h1>
                 </div>
             </div>
         </div>
@@ -431,12 +431,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/hexo/">
+                                <span class="chip bg-color">hexo</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
+                                hexo博客搭建
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -445,28 +458,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-17
+                    2020-10-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-17
+                    2020-10-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    1.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -481,15 +494,94 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h3 id="1-Hexo生成界面原理"><a href="#1-Hexo生成界面原理" class="headerlink" title="1. Hexo生成界面原理"></a>1. Hexo生成界面原理</h3><blockquote>
+<p>本節主要講述，Hexo怎麽生成界面的，我們寫的明明是Markdown文件爲什麽就可以變成HTML文件呢？以及MarkDown文件生成的HTML文件的對應關係是怎樣的呢？</p>
+</blockquote>
+<blockquote>
+<p>首先我們來看一下，Hexo的文件目錄：</p>
+<ul>
+<li><code>node_modules:</code> 依赖包</li>
+<li><code>public：</code>存放生成的页面</li>
+<li><code>scaffolds：</code>生成文章的一些模板</li>
+<li><code>source：</code>用来存放你的文章</li>
+<li><code>themes：</code>主题**</li>
+<li><code>_config.yml:</code> 博客的配置文件**</li>
+</ul>
+</blockquote>
+<p>输入<code>hexo new post &quot;article title&quot;</code> 或者 <code>hexo n &quot;article title&quot;</code>，新建一篇文章。</p>
+<p>然后打开<code>\source\_posts</code>的目录，可以发现下面多了一个文件夹和一个<code>.md</code>文件，一个用来存放你的图片等数据，另一个就是你的文章文件啦。<br>你可以会直接在<code>vscode</code>里面编写<code>markdown</code>文件，可以实时预览，也可以用用其他编辑<code>md</code>文件的软件的工具编写。</p>
+<p>编写完markdown文件后，根目录下输入<code>hexo g</code>生成静态网页，生成的靜態網頁均保存在<code>public</code>目錄下。</p>
+<p>我們在<code>source</code>文件夾下的文件均會被編譯，到<code>public</code>文件夾下生成對應的<code>HTML</code>文件，<code>post</code>中的文件會在<code>public</code>文件夾中生成和文章時間一直的目錄最後會有如下目錄：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201028231554092.png" alt="image-20201028231554092"></p>
+<p>文章的内容會保存在<code>index.html</code>文件中</p>
+<h4 id="1-2-4-layout（布局）"><a href="#1-2-4-layout（布局）" class="headerlink" title="1.2.4 layout（布局）"></a>1.2.4 layout（布局）</h4><hr>
+<h5 id="1-2-4-1-post"><a href="#1-2-4-1-post" class="headerlink" title="1.2.4.1 post"></a><strong>1.2.4.1 post</strong></h5><p>当你每一次使用代码</p>
+<pre class=" language-bash"><code class="language-bash">hexo new XXX</code></pre>
+<p>它其实默认使用的是<code>post</code>这个布局，也就是在<code>source</code>文件夹下的<code>_post</code>里面。</p>
+<p><code>Hexo</code>有三种默认布局：<code>post</code>、<code>page</code>和<code>draft</code>，它们分别对应不同的路径，而您自定义的其他布局和<code>post</code>相同，都将储存到<code>source/_posts</code>文件夹。</p>
+<p>而new这个命令其实是：</p>
+<pre class=" language-bash"><code class="language-bash">hexo new <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>title<span class="token operator">></span></code></pre>
+<p>只不过这个<code>layout</code>默认是<code>post</code>罢了。</p>
+<h5 id="1-2-4-2-page"><a href="#1-2-4-2-page" class="headerlink" title="1.2.4.2 page"></a><strong>1.2.4.2 page</strong></h5><p>如果你想另起一页，那么可以使用</p>
+<pre class=" language-bash"><code class="language-bash">hexo new page newpage</code></pre>
+<p>系统会自动给你在<code>source</code>文件夹下创建一个<code>newpage</code>文件夹，以及<code>newpage</code>文件夹中的<code>index.md</code>，这样你访问的<code>newpage</code>对应的链接就是<a target="_blank" rel="noopener" href="http://xxx.xxx/newpage">http://xxx.xxx/newpage</a></p>
+<blockquote>
+<p>最終使用hexo g 生成界面時，就會生成<code>newpage/index.html</code>，如下：</p>
+<p>hexo new page “about”</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201028232032913.png" alt="image-20201028232032913"></p>
+<h5 id="1-2-4-3-draft"><a href="#1-2-4-3-draft" class="headerlink" title="1.2.4.3 draft"></a><strong>1.2.4.3 draft</strong></h5><p><code>draft</code>是草稿的意思，也就是你如果想写文章，又不希望被看到，那么可以</p>
+<pre class=" language-bash"><code class="language-bash">hexo new draft newdraft</code></pre>
+<p>这样会在<code>source/_draft</code>中新建一个<code>newdraft.md</code>文件，如果你的草稿文件写的过程中，想要预览一下，那么可以使用</p>
+<pre class=" language-bash"><code class="language-bash">hexo server --draft</code></pre>
+<p>在本地端口中开启服务预览。</p>
+<p>如果你的草稿文件写完了，想要发表到<code>post</code>中，</p>
+<pre class=" language-bash"><code class="language-bash">hexo publish draft newdraft</code></pre>
+<p>就会自动把<code>newdraft.md</code>发送到<code>post</code>中。</p>
+<h4 id="1-2-3-Front-matter"><a href="#1-2-3-Front-matter" class="headerlink" title="1.2.3 Front-matter"></a>1.2.3 Front-matter</h4><blockquote>
+<p><code>scaffolds：</code>生成文章的一些模板</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201028232230247.png" alt="image-20201028232230247"></p>
+<blockquote>
+<ul>
+<li><code>draft.md</code>: 生成草稿文件的模板</li>
+<li><code>page.md</code>: 生成頁面文件的模板</li>
+<li><code>post.md</code>: 生成文章文件的模板</li>
+</ul>
+</blockquote>
+<hr>
+<p><code>Front-matter</code> 是<code>md</code>文件最上方以 <code>---</code>分隔的区域，用于指定个别文件的变量，举例来说：</p>
+<pre><code>title: Hexo+Github博客搭建记录
+date: 2019-08-10 21:44:44</code></pre>
+<p>下是预先定义的参数，您可在模板中使用这些参数值并加以利用。</p>
+<p>参数描述<code>layout</code>布局<code>title</code>标题<code>date</code>建立日期<code>updated</code>更新日期<code>comments</code>开启文章的评论功能<code>tags</code>标签（不适用于分页）<code>categories</code>分类（不适用于分页）<code>permalink</code>覆盖文章网址</p>
+<p>其中，分类和标签需要区别一下，分类具有顺序性和层次性，也就是说<code>Foo</code>，<code>Bar</code>不等于<code>Bar</code>，<code>Foo</code>；而标签没有顺序和层次。</p>
+<pre class=" language-yml"><code class="language-yml">---
+title: Hexo+Github博客搭建记录
+date: 2019-08-10 21:44:44
+author: 洪卫
+img: /medias/banner/7.jpg
+coverImg: /medias/banner/7.jpg
+top: true
+cover: true
+toc: true
+password: 5f15b28ffe43f8be4f239bdd9b69af9d80dbafcb20a5f0df5d1677a120ae9110
+mathjax: true
+summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+tags:
+- Hexo
+- Github
+- 博客
+categories:
+- 软件安装与配置
+---</code></pre>
+<p><strong><em>相關鏈接</em></strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/shwee/p/11421156.html">Hexo+Github: 个人博客网站搭建完全教程(看这篇就够了)</a></li>
+<li><a target="_blank" rel="noopener" href="http://oyjt.github.io/2016/01/14/%E4%BD%BF%E7%94%A8hexo%E5%88%9B%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2/">使用hexo创建github博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/44213627">hexo超完整的搭建教程，让你拥有一个专属个人博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">hexo-theme-matery</a></li>
+</ul>
 
             </div>
             <hr/>
@@ -505,7 +597,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Tony Xiong</a>
+                    <a href="/about" rel="external nofollow noreferrer">xmhans</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -515,7 +607,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hans1980775481.github.io/2020/10/17/hello-world/">http://hans1980775481.github.io/2020/10/17/hello-world/</a>
+                    <a href="http://hans1980775481.github.io/2020/10/28/hexo-jian-jie/">http://hans1980775481.github.io/2020/10/28/hexo-jian-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -528,7 +620,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Tony Xiong</a>
+                    <a href="/about" target="_blank">xmhans</a>
                     !
                 </span>
             </div>
@@ -552,7 +644,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/hexo/">
+                                    <span class="chip bg-color">hexo</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -981,9 +1077,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/10/28/hexo-jian-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Hexo--簡介">
+                        
+                        <span class="card-title">Hexo--簡介</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            HEXO 簡略説明
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
+                                    hexo博客搭建
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/10/25/hexo-ping-lun-xi-tong-cha-jian/">
                     <div class="card-image">
@@ -1001,9 +1148,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1027,42 +1174,6 @@
                         <span class="chip bg-color">评论系统</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/10/17/test/">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201016112531594.png" class="responsive-img" alt="test">
-                        
-                        <span class="card-title">test</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-17
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Tony Xiong
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
