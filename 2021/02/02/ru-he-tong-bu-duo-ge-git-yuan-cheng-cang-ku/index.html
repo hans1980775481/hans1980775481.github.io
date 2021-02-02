@@ -500,7 +500,7 @@
             <div id="articleContent">
                 <h3 id="日常需求"><a href="#日常需求" class="headerlink" title="日常需求"></a>日常需求</h3><p>以前源码是托管在 github 的, 现在想要同步托管在 gitee, 一做备份分发, 二方便国内下载使用(网速可观), 三防止被墙…</p>
 <h3 id="方式一-使用-gitee-的强制同步"><a href="#方式一-使用-gitee-的强制同步" class="headerlink" title="方式一 使用 gitee 的强制同步"></a>方式一 使用 gitee 的强制同步</h3><p>之前在 github 托管了这么一个项目 mirrors-in-china, 后来国内出了 gitee, 那么想着把项目同步一份到 gitee, 方便大家查看… 正巧 gitee 提供强制同步功能, 方便操作…</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_png/JfTPiahTHJhoREnBt3CTNCkbOgB0OqDQxtKz9sMibAVRzVqZiagHW6WhJ4LutsP3MM9jf4ru8mSZibGxibamWTGq2UQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20210202102142510.png" alt="image-20210202102142510"></p>
 <p>我还是只用维护 github 那份源码, gitee 这边没忘记的话, 手搓点击下强制同步按钮即可.</p>
 <p>但是容易忘记, 造成两边不完全同步.</p>
 <p>不过我这个项目本身就非常简单, 这点同步时差完全没大问题, 够用, 并且没有其他任何多余的操作.</p>
@@ -509,7 +509,7 @@
 <pre class=" language-shell"><code class="language-shell">$ git remote --verbose
 origin  git@github.com:taadis/GlobalScanner.Sdk.git (fetch)
 origin  git@github.com:taadis/GlobalScanner.Sdk.git (push)</code></pre>
-<p>可以看到目前仅有 <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">&#x67;&#105;&#116;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;</a>:taadis/GlobalScanner.Sdk.git 这个远程库地址.</p>
+<p>可以看到目前仅有 <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#105;&#116;&#x40;&#103;&#x69;&#x74;&#104;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;</a>:taadis/GlobalScanner.Sdk.git 这个远程库地址.</p>
 <p>我们来加一个 gitee 的远程地址, 首先在 gitee 建好同步仓库, 然后我们在本地添加一个新的远程库地址:</p>
 <pre class=" language-git"><code class="language-git"><span class="token command">$ git remote add giteeorigin git@gitee.com:taadis/GlobalScanner.Sdk.git</span></code></pre>
 <p>添加完成后我们查看一下:</p>
