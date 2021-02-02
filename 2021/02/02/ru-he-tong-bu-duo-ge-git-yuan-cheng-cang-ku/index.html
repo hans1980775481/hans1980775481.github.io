@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo-评论系统插件, Tony Xiong 的博客站点">
+    <meta name="keywords" content="如何同步多个 git 远程仓库, Tony Xiong 的博客站点">
     <meta name="description" content="记录学习笔记和生活日志">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo-评论系统插件 | Tony Xiong 的博客站点</title>
+    <title>如何同步多个 git 远程仓库 | Tony Xiong 的博客站点</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo-评论系统插件</h1>
+                    <h1 class="description center-align post-title">如何同步多个 git 远程仓库</h1>
                 </div>
             </div>
         </div>
@@ -433,12 +433,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">
-                                <span class="chip bg-color">评论系统</span>
+                            <a href="/tags/git/">
+                                <span class="chip bg-color">git</span>
                             </a>
                         
                     </div>
@@ -449,8 +445,12 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
-                                hexo博客搭建
+                            <a href="/categories/%E8%BD%AC%E5%8F%91/" class="post-category">
+                                转发
+                            </a>
+                        
+                            <a href="/categories/%E8%BD%AC%E5%8F%91/git%E6%93%8D%E4%BD%9C/" class="post-category">
+                                git操作
                             </a>
                         
                     </div>
@@ -462,28 +462,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-25
+                    2021-02-02
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-26
+                    2021-02-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    435
+                    993
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -498,51 +498,95 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<blockquote>
-<p>本文，我们主要来讨论一下，如何使用Hexo系统在<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">hexo-theme-matery</a>主题下，完成评论功能使用。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">hexo-theme-matery</a>支持多种评论插件的搭配使用：<a target="_blank" rel="noopener" href="https://gitalk.github.io/">Gitalk</a>、<a target="_blank" rel="noopener" href="https://imsun.github.io/gitment/">Gitment</a>、<a target="_blank" rel="noopener" href="https://valine.js.org/">Valine</a> 和 <a target="_blank" rel="noopener" href="https://disqus.com/">Disqus</a> 评论模块（推荐使用 <code>Gitalk</code>）</p>
-<p>本篇博客中主要讨论使用Valine的评论系统来完成，评论功能的使用。</p>
-</blockquote>
-<h3 id="1-注册账号"><a href="#1-注册账号" class="headerlink" title="1. 注册账号"></a>1. 注册账号</h3><p><a target="_blank" rel="noopener" href="https://www.leancloud.cn/">leancloud官网</a>需要现先在官网注册一个账户</p>
-<h3 id="2-创建应用"><a href="#2-创建应用" class="headerlink" title="2. 创建应用"></a>2. 创建应用</h3><blockquote>
-<p>注册完账号之后，创建一个用于评论数据的应用</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201025235952054.png" alt="image-20201025235952054"></p>
-<blockquote>
-<p>应用创建好以后，进入刚刚创建的应用，选择左下角的<code>设置</code>&gt;<code>应用Key</code>，然后就能看到你的<code>APP ID</code>和<code>APP Key</code>了：</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201026000038758.png" alt="image-20201026000038758"></p>
-<h3 id="3-安全域名"><a href="#3-安全域名" class="headerlink" title="3. 安全域名"></a>3. 安全域名</h3><p>为了你的数据安全，请设置自己的<code>安全域名</code>：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201026000559211.png" alt="image-20201026000559211"></p>
-<h3 id="4-域名配置"><a href="#4-域名配置" class="headerlink" title="4. 域名配置"></a>4. 域名配置</h3><blockquote>
-<p>由于我们创建的这个应用，使用的是Leancloud配置的默认域名，只有3个月的使用期限，我们可以看到如下提示：</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201026001514066.png" alt="image-20201026001514066"></p>
-<blockquote>
-<p>所以我们尽量，为这个应用配置一个我们自己的域名</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201026001620151.png" alt="image-20201026001620151"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201026001957169.png" alt="image-20201026001957169"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201026002111146.png" alt="image-20201026002111146"></p>
-<h3 id="5-hexo配置使用"><a href="#5-hexo配置使用" class="headerlink" title="5. hexo配置使用"></a>5. hexo配置使用</h3><blockquote>
-<p>完成数据应用的配置之后，就可以在<a target="_blank" rel="noopener" href="https://github.com/blinkfox/hexo-theme-matery">hexo-theme-matery</a>的主题配置文件下，编辑<code>_config.yml</code>文件中的Valine配置</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201026000946659.png" alt="image-20201026000946659"></p>
-<blockquote>
-<p><code>appId</code>和<code>appKey</code>要和数据应用中的一致，然后，在Hexo博客的更目录下执行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code>，访问<code>http://localhost:4000</code>然后选择一篇文章，即可看到文章底部有评论界面。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/hans1980775481/picture-bed/img/image-20201026001303572.png" alt="image-20201026001303572"></p>
-<blockquote>
-<p>hint: 如果Leancloud的应用太久没用的话，会被archive，我们登陆LeanCloud重新激活应用即可。</p>
-</blockquote>
-<p><strong><em>相关链接</em></strong></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://valine.js.org/quickstart.html">Valine 介绍</a></li>
-<li><a target="_blank" rel="noopener" href="https://juejin.im/entry/6844903683356885000">hexo博客评论新神器——Valine</a></li>
-<li><a target="_blank" rel="noopener" href="https://dev66.xyz/2020/01/valine-error.html">Valine的错误信息</a></li>
-<li><a target="_blank" rel="noopener" href="https://cjjkkk.github.io/gitalk/">使用gittalk实现hexo博客评论功能| Jacky Cheng</a></li>
-</ul>
+                <h3 id="日常需求"><a href="#日常需求" class="headerlink" title="日常需求"></a>日常需求</h3><p>以前源码是托管在 github 的, 现在想要同步托管在 gitee, 一做备份分发, 二方便国内下载使用(网速可观), 三防止被墙…</p>
+<h3 id="方式一-使用-gitee-的强制同步"><a href="#方式一-使用-gitee-的强制同步" class="headerlink" title="方式一 使用 gitee 的强制同步"></a>方式一 使用 gitee 的强制同步</h3><p>之前在 github 托管了这么一个项目 mirrors-in-china, 后来国内出了 gitee, 那么想着把项目同步一份到 gitee, 方便大家查看… 正巧 gitee 提供强制同步功能, 方便操作…</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/JfTPiahTHJhoREnBt3CTNCkbOgB0OqDQxtKz9sMibAVRzVqZiagHW6WhJ4LutsP3MM9jf4ru8mSZibGxibamWTGq2UQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></p>
+<p>我还是只用维护 github 那份源码, gitee 这边没忘记的话, 手搓点击下强制同步按钮即可.</p>
+<p>但是容易忘记, 造成两边不完全同步.</p>
+<p>不过我这个项目本身就非常简单, 这点同步时差完全没大问题, 够用, 并且没有其他任何多余的操作.</p>
+<h3 id="方式二-手搓-push-多次"><a href="#方式二-手搓-push-多次" class="headerlink" title="方式二 手搓 push 多次"></a>方式二 手搓 push 多次</h3><p>换另一个项目来说, 我之前在 github 托管了这么一个项目 GlobalScanner.Sdk, 应广大小伙伴需求, 希望把项目在国内同步一份, 方便下载/参考/使用.</p>
+<p>那么不外乎就是配置多个远程库地址, 多次推送咯, 那么我们先来看看现有远程库的情况:</p>
+<pre class=" language-shell"><code class="language-shell">$ git remote --verbose
+origin  git@github.com:taadis/GlobalScanner.Sdk.git (fetch)
+origin  git@github.com:taadis/GlobalScanner.Sdk.git (push)</code></pre>
+<p>可以看到目前仅有 <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">&#x67;&#105;&#116;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;</a>:taadis/GlobalScanner.Sdk.git 这个远程库地址.</p>
+<p>我们来加一个 gitee 的远程地址, 首先在 gitee 建好同步仓库, 然后我们在本地添加一个新的远程库地址:</p>
+<pre class=" language-git"><code class="language-git"><span class="token command">$ git remote add giteeorigin git@gitee.com:taadis/GlobalScanner.Sdk.git</span></code></pre>
+<p>添加完成后我们查看一下:</p>
+<pre class=" language-shell"><code class="language-shell">$ git remote --verbose
+giteeorigin     git@gitee.com:taadis/GlobalScanner.Sdk.git (fetch)
+giteeorigin     git@gitee.com:taadis/GlobalScanner.Sdk.git (push)
+origin  git@github.com:taadis/GlobalScanner.Sdk.git (fetch)
+origin  git@github.com:taadis/GlobalScanner.Sdk.git (push)</code></pre>
+<p>可以查看到以下2个远程库地址:</p>
+<p>giteeorigin: 是我们新加的 gitee 的远程库地址</p>
+<p>origin: 是我们之前在 github 的远程库地址</p>
+<p>接下来同步:</p>
+<pre class=" language-shell"><code class="language-shell">git add .
+git commit -m "add gitee"
+git push -u origin master
+git push -u giteeorigin master</code></pre>
+<p>有链接有真相:</p>
+<p>github:</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/taadis/GlobalScanner.Sdk/commit/da00f0584c5a2699bb621e99a00fe15dece33d38">https://github.com/taadis/GlobalScanner.Sdk/commit/da00f0584c5a2699bb621e99a00fe15dece33d38</a></p>
+<p>gitee:</p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/taadis/GlobalScanner.Sdk/commit/da00f0584c5a2699bb621e99a00fe15dece33d38">https://gitee.com/taadis/GlobalScanner.Sdk/commit/da00f0584c5a2699bb621e99a00fe15dece33d38</a></p>
+<p>比之前多个一次 git push 操作…其他和之前没有太大区别…没有更多的心智负担.</p>
+<p>但是经常容易忘记…</p>
+<h3 id="方式三-最多跑一次"><a href="#方式三-最多跑一次" class="headerlink" title="方式三 最多跑一次"></a>方式三 最多跑一次</h3><p>不想着法偷懒的 coder 不是好程序员, 秉承 “最多跑一次” 的理念, 让我们试试怎么一次 push 统统搞定.</p>
+<p>在本地 git 仓库里找到这个文件 .git/config, 内容如下:</p>
+<pre class=" language-shell"><code class="language-shell">[core]
+    repositoryformatversion = 0
+    filemode = false
+    bare = false
+    logallrefupdates = true
+    symlinks = false
+    ignorecase = true
+[remote "origin"]
+    url = git@github.com:taadis/GlobalScanner.Sdk.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+[remote "giteeorigin"]
+    url = git@gitee.com:taadis/GlobalScanner.Sdk.git
+    fetch = +refs/heads/*:refs/remotes/giteeorigin/*</code></pre>
+<p>改为如下:</p>
+<p>合并2个 remote 配置</p>
+<pre class=" language-shell"><code class="language-shell">[core]
+    repositoryformatversion = 0
+    filemode = false
+    bare = false
+    logallrefupdates = true
+    symlinks = false
+    ignorecase = true
+[remote "origin"]
+    url = git@github.com:taadis/GlobalScanner.Sdk.git
+    url = git@gitee.com:taadis/GlobalScanner.Sdk.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master</code></pre>
+<p>上面这个手动配置是为了更好的说明而已, 其实可以用以下命令简化操作, 在 origin 节点下补充了一个新的远程地址.</p>
+<pre class=" language-shell"><code class="language-shell">
+$ git remote set-url --add origin git@gitee.com:taadis/GlobalScanner.Sdk.git</code></pre>
+<p>看看补充后的远程地址情况</p>
+<pre class=" language-shell"><code class="language-shell">git remote --verbose
+origin  git@github.com:taadis/GlobalScanner.Sdk.git (fetch)
+origin  git@github.com:taadis/GlobalScanner.Sdk.git (push)
+origin  git@gitee.com:taadis/GlobalScanner.Sdk.git (push)</code></pre>
+<p>注意看后面的 (fetch)(push), 相信你会明白点什么.</p>
+<p>然后我们可以继续这样使用来实现 github &amp; gitee 的同步推送和分发:</p>
+<pre class=" language-shell"><code class="language-shell">git add .
+git commit -m "github & gitee 同步推送和分发"
+git push origin master</code></pre>
+<p>有链接有真相:</p>
+<p>github:</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/taadis/GlobalScanner.Sdk/commit/6846226ff2be56ed0f58c9345bac4a0170f1880f">https://github.com/taadis/GlobalScanner.Sdk/commit/6846226ff2be56ed0f58c9345bac4a0170f1880f</a></p>
+<p>gitee:</p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/taadis/GlobalScanner.Sdk/commit/6846226ff2be56ed0f58c9345bac4a0170f1880f">https://gitee.com/taadis/GlobalScanner.Sdk/commit/6846226ff2be56ed0f58c9345bac4a0170f1880f</a></p>
+<p>可以看到, 使用上和最初没有任何区别, 只是多配置了一次, 算是实现了 “最多配(跑)一次”.</p>
+<h3 id="总而言之"><a href="#总而言之" class="headerlink" title="总而言之"></a>总而言之</h3><p>几种方式, 各取所需咯.</p>
 
             </div>
             <hr/>
@@ -558,7 +602,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Tony Xiong</a>
+                    <a href="/about" rel="external nofollow noreferrer">xmhans</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -568,7 +612,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://hans1980775481.github.io/2020/10/25/hexo-ping-lun-xi-tong-cha-jian/">http://hans1980775481.github.io/2020/10/25/hexo-ping-lun-xi-tong-cha-jian/</a>
+                    <a href="http://hans1980775481.github.io/2021/02/02/ru-he-tong-bu-duo-ge-git-yuan-cheng-cang-ku/">http://hans1980775481.github.io/2021/02/02/ru-he-tong-bu-duo-ge-git-yuan-cheng-cang-ku/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -581,7 +625,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Tony Xiong</a>
+                    <a href="/about" target="_blank">xmhans</a>
                     !
                 </span>
             </div>
@@ -606,12 +650,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">
-                                    <span class="chip bg-color">评论系统</span>
+                                <a href="/tags/git/">
+                                    <span class="chip bg-color">git</span>
                                 </a>
                             
                         </div>
@@ -1042,46 +1082,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/10/28/hexo-jian-jie/">
+                <a href="/2021/02/02/ru-he-tong-bu-duo-ge-git-yuan-cheng-cang-ku/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Hexo--簡介">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="如何同步多个 git 远程仓库">
                         
-                        <span class="card-title">Hexo--簡介</span>
+                        <span class="card-title">如何同步多个 git 远程仓库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            HEXO 簡略説明
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    hexo博客搭建
+                            <a href="/categories/%E8%BD%AC%E5%8F%91/" class="post-category">
+                                    转发
+                                </a>
+                            
+                            <a href="/categories/%E8%BD%AC%E5%8F%91/git%E6%93%8D%E4%BD%9C/" class="post-category">
+                                    git操作
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
@@ -1095,13 +1141,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/10/17/hello-world/">
+                <a href="/2020/12/09/windows-terminal-jian-yi-shi-yong-jiao-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Windows Terminal 简易使用教程">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Windows Terminal 简易使用教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1112,12 +1158,12 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            Tony Xiong
+                            xmhans
                             
                         </span>
                     </div>

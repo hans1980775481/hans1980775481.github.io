@@ -6,7 +6,7 @@
   <link href="http://hans1980775481.github.io/atom.xml" rel="self"/>
   
   <link href="http://hans1980775481.github.io/"/>
-  <updated>2020-12-07T11:29:21.073Z</updated>
+  <updated>2021-02-02T02:17:12.759Z</updated>
   <id>http://hans1980775481.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何同步多个 git 远程仓库</title>
+    <link href="http://hans1980775481.github.io/2021/02/02/ru-he-tong-bu-duo-ge-git-yuan-cheng-cang-ku/"/>
+    <id>http://hans1980775481.github.io/2021/02/02/ru-he-tong-bu-duo-ge-git-yuan-cheng-cang-ku/</id>
+    <published>2021-02-02T02:09:49.000Z</published>
+    <updated>2021-02-02T02:17:12.759Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="日常需求"><a href="#日常需求" class="headerlink" title="日常需求"></a>日常需求</h3><p>以前源码是托管在 github 的, 现在想要同步托管在 gitee, 一做备份分发, 二方便国内下载使用(网速可观), 三防止被墙…</p><h3 id="方式一-使用-gitee-的强制同步"><a href="#方式一-使用-gitee-的强制同步" class="headerlink" title="方式一 使用 gitee 的强制同步"></a>方式一 使用 gitee 的强制同步</h3><p>之前在 github 托管了这么一个项目 mirrors-in-china, 后来国内出了 gitee, 那么想着把项目同步一份到 gitee, 方便大家查看… 正巧 gitee 提供强制同步功能, 方便操作…</p><p><img src="https://mmbiz.qpic.cn/mmbiz_png/JfTPiahTHJhoREnBt3CTNCkbOgB0OqDQxtKz9sMibAVRzVqZiagHW6WhJ4LutsP3MM9jf4ru8mSZibGxibamWTGq2UQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></p><p>我还是只用维护 github 那份源码, gitee 这边没忘记的话, 手搓点击下强制同步按钮即可.</p><p>但是容易忘记, 造成两边不完全同步.</p><p>不过我这个项目本身就非常简单, 这点同步时差完全没大问题, 够用, 并且没有其他任何多余的操作.</p><h3 id="方式二-手搓-push-多次"><a href="#方式二-手搓-push-多次" class="headerlink" title="方式二 手搓 push 多次"></a>方式二 手搓 push 多次</h3><p>换另一个项目来说, 我之前在 github 托管了这么一个项目 GlobalScanner.Sdk, 应广大小伙伴需求, 希望把项目在国内同步一份, 方便下载/参考/使用.</p><p>那么不外乎就是配置多个远程库地址, 多次推送咯, 那么我们先来看看现有远程库的情况:</p><pre class=" language-shell"><code class="language-shell">$ git remote --verboseorigin  git@github.com:taadis/GlobalScanner.Sdk.git (fetch)origin  git@github.com:taadis/GlobalScanner.Sdk.git (push)</code></pre><p>可以看到目前仅有 <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;">&#x67;&#105;&#116;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#109;</a>:taadis/GlobalScanner.Sdk.git 这个远程库地址.</p><p>我们来加一个 gitee 的远程地址, 首先在 gitee 建好同步仓库, 然后我们在本地添加一个新的远程库地址:</p><pre class=" language-git"><code class="language-git"><span class="token command">$ git remote add giteeorigin git@gitee.com:taadis/GlobalScanner.Sdk.git</span></code></pre><p>添加完成后我们查看一下:</p><pre class=" language-shell"><code class="language-shell">$ git remote --verbosegiteeorigin     git@gitee.com:taadis/GlobalScanner.Sdk.git (fetch)giteeorigin     git@gitee.com:taadis/GlobalScanner.Sdk.git (push)origin  git@github.com:taadis/GlobalScanner.Sdk.git (fetch)origin  git@github.com:taadis/GlobalScanner.Sdk.git (push)</code></pre><p>可以查看到以下2个远程库地址:</p><p>giteeorigin: 是我们新加的 gitee 的远程库地址</p><p>origin: 是我们之前在 github 的远程库地址</p><p>接下来同步:</p><pre class=" language-shell"><code class="language-shell">git add .git commit -m "add gitee"git push -u origin mastergit push -u giteeorigin master</code></pre><p>有链接有真相:</p><p>github:</p><p><a href="https://github.com/taadis/GlobalScanner.Sdk/commit/da00f0584c5a2699bb621e99a00fe15dece33d38">https://github.com/taadis/GlobalScanner.Sdk/commit/da00f0584c5a2699bb621e99a00fe15dece33d38</a></p><p>gitee:</p><p><a href="https://gitee.com/taadis/GlobalScanner.Sdk/commit/da00f0584c5a2699bb621e99a00fe15dece33d38">https://gitee.com/taadis/GlobalScanner.Sdk/commit/da00f0584c5a2699bb621e99a00fe15dece33d38</a></p><p>比之前多个一次 git push 操作…其他和之前没有太大区别…没有更多的心智负担.</p><p>但是经常容易忘记…</p><h3 id="方式三-最多跑一次"><a href="#方式三-最多跑一次" class="headerlink" title="方式三 最多跑一次"></a>方式三 最多跑一次</h3><p>不想着法偷懒的 coder 不是好程序员, 秉承 “最多跑一次” 的理念, 让我们试试怎么一次 push 统统搞定.</p><p>在本地 git 仓库里找到这个文件 .git/config, 内容如下:</p><pre class=" language-shell"><code class="language-shell">[core]    repositoryformatversion = 0    filemode = false    bare = false    logallrefupdates = true    symlinks = false    ignorecase = true[remote "origin"]    url = git@github.com:taadis/GlobalScanner.Sdk.git    fetch = +refs/heads/*:refs/remotes/origin/*[branch "master"]    remote = origin    merge = refs/heads/master[remote "giteeorigin"]    url = git@gitee.com:taadis/GlobalScanner.Sdk.git    fetch = +refs/heads/*:refs/remotes/giteeorigin/*</code></pre><p>改为如下:</p><p>合并2个 remote 配置</p><pre class=" language-shell"><code class="language-shell">[core]    repositoryformatversion = 0    filemode = false    bare = false    logallrefupdates = true    symlinks = false    ignorecase = true[remote "origin"]    url = git@github.com:taadis/GlobalScanner.Sdk.git    url = git@gitee.com:taadis/GlobalScanner.Sdk.git    fetch = +refs/heads/*:refs/remotes/origin/*[branch "master"]    remote = origin    merge = refs/heads/master</code></pre><p>上面这个手动配置是为了更好的说明而已, 其实可以用以下命令简化操作, 在 origin 节点下补充了一个新的远程地址.</p><pre class=" language-shell"><code class="language-shell">$ git remote set-url --add origin git@gitee.com:taadis/GlobalScanner.Sdk.git</code></pre><p>看看补充后的远程地址情况</p><pre class=" language-shell"><code class="language-shell">git remote --verboseorigin  git@github.com:taadis/GlobalScanner.Sdk.git (fetch)origin  git@github.com:taadis/GlobalScanner.Sdk.git (push)origin  git@gitee.com:taadis/GlobalScanner.Sdk.git (push)</code></pre><p>注意看后面的 (fetch)(push), 相信你会明白点什么.</p><p>然后我们可以继续这样使用来实现 github &amp; gitee 的同步推送和分发:</p><pre class=" language-shell"><code class="language-shell">git add .git commit -m "github & gitee 同步推送和分发"git push origin master</code></pre><p>有链接有真相:</p><p>github:</p><p><a href="https://github.com/taadis/GlobalScanner.Sdk/commit/6846226ff2be56ed0f58c9345bac4a0170f1880f">https://github.com/taadis/GlobalScanner.Sdk/commit/6846226ff2be56ed0f58c9345bac4a0170f1880f</a></p><p>gitee:</p><p><a href="https://gitee.com/taadis/GlobalScanner.Sdk/commit/6846226ff2be56ed0f58c9345bac4a0170f1880f">https://gitee.com/taadis/GlobalScanner.Sdk/commit/6846226ff2be56ed0f58c9345bac4a0170f1880f</a></p><p>可以看到, 使用上和最初没有任何区别, 只是多配置了一次, 算是实现了 “最多配(跑)一次”.</p><h3 id="总而言之"><a href="#总而言之" class="headerlink" title="总而言之"></a>总而言之</h3><p>几种方式, 各取所需咯.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;日常需求&quot;&gt;&lt;a href=&quot;#日常需求&quot; class=&quot;headerlink&quot; title=&quot;日常需求&quot;&gt;&lt;/a&gt;日常需求&lt;/h3&gt;&lt;p&gt;以前源码是托管在 github 的, 现在想要同步托管在 gitee, 一做备份分发, 二方便国内下载使用(网速可观), 三</summary>
+      
+    
+    
+    
+    <category term="转发" scheme="http://hans1980775481.github.io/categories/%E8%BD%AC%E5%8F%91/"/>
+    
+    <category term="git操作" scheme="http://hans1980775481.github.io/categories/%E8%BD%AC%E5%8F%91/git%E6%93%8D%E4%BD%9C/"/>
+    
+    
+    <category term="git" scheme="http://hans1980775481.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows Terminal 简易使用教程</title>
+    <link href="http://hans1980775481.github.io/2020/12/09/windows-terminal-jian-yi-shi-yong-jiao-cheng/"/>
+    <id>http://hans1980775481.github.io/2020/12/09/windows-terminal-jian-yi-shi-yong-jiao-cheng/</id>
+    <published>2020-12-09T02:25:57.000Z</published>
+    <updated>2020-12-10T08:44:31.038Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong><em>相关链接：</em></strong></p><ul><li><a href="https://blog.csdn.net/weixin_42815609/article/details/107451481">Windows Terminal 窗口/控制台切换快捷键总结</a></li><li><a href="https://www.xiaoz.me/archives/15448">Windows Terminal + Alpine Linux + ZSH打造自己的高颜值终端</a></li><li><a href="http://www.python3.vip/blog/winterm/">Windows Terminal 使用技巧</a></li></ul><blockquote><p>历史配置数量太多</p></blockquote><p><img src="_image/Windows-Terminal-%E7%AE%80%E6%98%93%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/image-20201209183543737.png" alt="image-20201209183543737"></p><pre><code>can&#39;t found node, please check your input sources or destinationsinput content does not match any node in topology, please check input or topologycan not found from intfObject in the device %s, please check sourcescan not found path, please check your address, sources:%s, destinations:%s</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;em&gt;相关链接：&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/weixin_42815609/article/details/107451481&quot;&gt;Windows Terminal 窗</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>关于Java中的WeakReference</title>
